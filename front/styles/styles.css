@@ -1,0 +1,81 @@
+/* Estilos personalizados para el Navbar */
+.navbar {
+    background-color: #000; /* Color de fondo negro */
+    color: #fff; /* Color de texto blanco */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff; /* Color del icono de hamburguesa blanco */
+    color: #000; /* Color del icono de hamburguesa negro */
+}
+
+/* Cambiar el color de fondo del Navbar cuando está contraído */
+@media (max-width: 991.98px) {
+    .navbar.bg-dark {
+        background-color: #333; /* Color de fondo oscuro cuando está contraído */
+    }
+}
+section {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+/*cards*/
+.containerCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 20px;
+}
+
+.card {
+    width: 18rem;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.btnCard {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btnCard:hover {
+    background-color: #0056b3;
+}
