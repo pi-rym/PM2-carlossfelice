@@ -1,23 +1,12 @@
 console.log(tempData);
 
 
-//navbar
-window.onscroll = function() {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        document.querySelector('.navbar').classList.add('bg-secondary');
-    } else {
-        document.querySelector('.navbar').classList.remove('bg-secondary');
-    }
-}
-
 //cards
+// Función que crea una tarjeta de película a partir de un objeto movie
+
 function createMovieCard(movie) {
     return `
-    <div class="card">
+    <a class="card" href="${movie.link}">
         <img src="${movie.poster}" class="card-img-top" alt="${movie.title}">
         <div class="card-body">
             <h5 class="card-title">${movie.title} (${movie.year})</h5>
@@ -25,15 +14,14 @@ function createMovieCard(movie) {
             <p class="card-text">Duration: ${movie.duration}</p>
             <p class="card-text">Genre: ${movie.genre.join(", ")}</p>
             <p class="card-text">Rate: ${movie.rate}</p>
-            <a href="#" class="btnCard">Click</a>
         </div>
-    </div>`;
+    </a>`;
 }
 
-// Obtener el contenedor de las tarjetas
+// Obtener el contenedor de las tarjetas de películas del DOM
 const container = document.querySelector(".containerCards");
-
-// Generar las tarjetas de película
+0
+// Añadir al HTML del contenedor la tarjeta de película generada por createMovieCard(movie)
 tempData.forEach(movie => {
     container.innerHTML += createMovieCard(movie);
 });
