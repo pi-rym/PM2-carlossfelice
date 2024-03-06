@@ -1,4 +1,5 @@
-console.log(tempData);
+// console.log(tempData);
+
 
 
 //cards
@@ -25,3 +26,4 @@ const container = document.querySelector(".containerCards");
 tempData.forEach(movie => {
     container.innerHTML += createMovieCard(movie);
 });
+

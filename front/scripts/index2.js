@@ -25,7 +25,7 @@ const renderMovieCards = (movies) => {
         container.appendChild(card);
     });
 };
-
+/*
 // Función para obtener y renderizar las películas desde la API
 const getAndRenderMovies = () => {
     $.get('https://students-api.2.us-1.fl0.io/movies', (data) => {
@@ -35,3 +35,7 @@ const getAndRenderMovies = () => {
 
 // Llamar a la función para obtener y renderizar las películas al cargar la página
 document.addEventListener('DOMContentLoaded', getAndRenderMovies);
+*/
+$.get('https://students-api.2.us-1.fl0.io/movies', (data) => {
+    renderMovieCards(data);    
+});

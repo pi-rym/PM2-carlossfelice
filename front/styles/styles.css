@@ -1,12 +1,17 @@
 
-
-/* Estilos personalizados para el Navbar */
-.navbar {
-    background-color: #000; /* Color de fondo negro */
-    color: #fff; /* Color de texto blanco */
+body {
+    background-color: #212529; /* Color oscuro similar al de las salas de cine */
+    color: #fff; /* Texto en blanco para contrastar */
 }
 
-/* Alinear el logo a la izquierda */
+.navbar {
+    /* position: fixed !important; */
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #800000 !important; /* Rojo oscuro */
+    padding: 10px 0 !important;
+    color: #ffffff !important; /* Blanco */
+}
 .navbar-brand {
     margin-right: auto; /* Mueve el logo hacia la izquierda */
 }
@@ -32,30 +37,65 @@
         background-color: #333; 
     }
 }
-section {
-    background-color: #f8f9fa;
+/* Carousel */
+
+/* .carousel-control-prev,
+.carousel-control-next {
+    width: 30px; 
+    height: 30px; 
+    opacity: 0.5;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border: none; 
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(50%); 
+} */
+.carousel-inner .carousel-item img {
+    height: 400px; /* Establece la altura deseada para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+}
+/* 
+section {
+    margin-bottom: 10px;
+    background-color: #333;
+} */
 /*cards*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(50%);
+}
+.containerCards,
+.containerCards2 {
+    background-color: #000000; /* Negro */
+}
 .containerCards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px;
     background-color: #333;
-    padding: 20px;
+    border-radius: 10px;
 }
 .containerCards2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px;
     background-color: #333;
-    padding: 20px;
+    border-radius: 10px;
+
 }
 .card {
+    background-color: #ffffff; /* Blanco */
+    color: #333333; /* Gris oscuro */
     width: 18rem;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -89,6 +129,56 @@ section {
 
 .btnCard:hover {
     background-color: #333;
+}
+/* Estilos para la sección de Promociones */
+.section-promociones {
+    padding: 50px 0;
+    background-color: #333;
+}
+
+.section-title {
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.promociones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.promocion {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.promocion-img {
+    width: 100%;
+    height: 200px; /* Establece la altura deseada para las imágenes */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.promocion-title {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.promocion-description {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 footer.footer {
