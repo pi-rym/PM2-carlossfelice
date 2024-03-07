@@ -1,42 +1,82 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #212529; /* Color oscuro similar al de las salas de cine */
-    color: #fff; /* Texto en blanco para contrastar */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    /* Color de fondo */
+    color: #333;
+    /* Color del texto */
+}
+
+ul,
+ol {
+    list-style: none;
+    /* Eliminar viñetas de listas */
+}
+
+a {
+    text-decoration: none;
+    /* Eliminar subrayado de enlaces */
+    color: inherit;
+    /* Heredar color del texto */
+}
+
+button,
+input {
+    border: none;
+    /* Eliminar bordes predeterminados */
+    outline: none;
+    /* Eliminar contorno al enfocar */
 }
 
 .navbar {
     /* position: fixed !important; */
     width: 100% !important;
     z-index: 1000 !important;
-    background-color: #800000 !important; /* Rojo oscuro */
+    background-color: #800000 !important;
+    /* Rojo oscuro */
     padding: 10px 0 !important;
-    color: #ffffff !important; /* Blanco */
+    color: #ffffff !important;
+    /* Blanco */
 }
+
 .navbar-brand {
-    margin-right: auto; /* Mueve el logo hacia la izquierda */
+    margin-right: auto;
+    /* Mueve el logo hacia la izquierda */
 }
 
-
-.navbar-nav {
-    margin-left: auto; 
+.navbar-nav .nav-link {
+    font-size: 25px;
+    /* Tamaño de la fuente */
 }
 
 .navbar-nav {
-    margin-left: auto; 
-    margin-right: 0; 
+    margin-left: auto;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .navbar-toggler-icon {
-    background-color: #fff; 
-    color: #000; 
+    background-color: #fff;
+    color: #000;
 }
 
 /* Cambiar el color de fondo del Navbar cuando está contraído */
 @media (max-width: 991.98px) {
     .navbar.bg-dark {
-        background-color: #333; 
+        background-color: #333;
     }
 }
+
 /* Carousel */
 
 /* .carousel-control-prev,
@@ -56,9 +96,12 @@ body {
     filter: brightness(50%); 
 } */
 .carousel-inner .carousel-item img {
-    height: 400px; /* Establece la altura deseada para las imágenes */
-    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    height: 400px;
+    /* Establece la altura deseada para las imágenes */
+    object-fit: cover;
+    /* Ajusta la imagen para llenar el contenedor */
 }
+
 /* 
 section {
     margin-bottom: 10px;
@@ -69,11 +112,16 @@ section {
 .carousel-control-next-icon {
     filter: brightness(50%);
 }
+
+.containerFavoriteFilms,
 .containerCards,
 .containerCards2 {
-    background-color: #000000; /* Negro */
+    background-color: #000000;
+    /* Negro */
 }
-.containerCards {
+
+.containerFavoriteFilms {
+    background-image: url("https://i.pinimg.com/564x/ba/76/ab/ba76abc30e073bcd6fc3f4a9f82b5084.jpg");
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -81,6 +129,17 @@ section {
     background-color: #333;
     border-radius: 10px;
 }
+
+.containerCards {
+    background-image: url("https://i.pinimg.com/564x/bf/a8/2f/bfa82f126d7265d4bf8502796f461605.jpg");
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
 .containerCards2 {
     display: flex;
     flex-wrap: wrap;
@@ -90,9 +149,12 @@ section {
     border-radius: 10px;
 
 }
+
 .card {
-    background-color: #ffffff; /* Blanco */
-    color: #333333; /* Gris oscuro */
+    background-color: #ffffff;
+    /* Blanco */
+    color: #333333;
+    /* Gris oscuro */
     width: 18rem;
     margin-bottom: 20px;
     padding: 15px;
@@ -111,9 +173,11 @@ section {
 
     padding: 15px;
 }
-.title{
-   text-align: center; 
+
+.title {
+    text-align: center;
 }
+
 .card-title {
     font-size: 1.25rem;
     margin-bottom: 10px;
@@ -128,16 +192,37 @@ section {
 
 
 .btnCard:hover {
-    background-color: #333;
+    background-color: black;
 }
+
+.hr {
+    border: none;
+    height: 1px;
+    /* Grosor del hr */
+    background-color: #333;
+    /* Color que se mezcle con el fondo */
+    margin: 20px 0;
+    /* Margen superior e inferior */
+}
+
 /* Estilos para la sección de Promociones */
+.section-cards,
+.section-recomendadas {
+    background-image: url("https://i.pinimg.com/564x/62/55/27/625527dfaa887b8ad67dc38bad55fdf3.jpg");
+    padding: 30px 0;
+    background-color: #333;
+    border-radius: 10px;
+}
+
 .section-promociones {
-    padding: 50px 0;
+    background-image: url("https://i.pinimg.com/564x/62/55/27/625527dfaa887b8ad67dc38bad55fdf3.jpg");
+    padding: 30px 0;
     background-color: #333;
 }
 
 .section-title {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Blanco con una transparencia del 80% */
     text-align: center;
     margin-bottom: 30px;
     padding: 10px;
@@ -152,6 +237,7 @@ section {
 }
 
 .promocion {
+
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -161,7 +247,8 @@ section {
 
 .promocion-img {
     width: 100%;
-    height: 200px; /* Establece la altura deseada para las imágenes */
+    height: 200px;
+    /* Establece la altura deseada para las imágenes */
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;

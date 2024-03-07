@@ -7,7 +7,7 @@
 
 function createMovieCard(movie) {
     return `
-    <a class="card" href="${movie.link}">
+    <a class="card" href="#">
         <img src="${movie.poster}" class="card-img-top" alt="${movie.title}">
         <div class="card-body">
             <h5 class="card-title">${movie.title} (${movie.year})</h5>
@@ -16,14 +16,31 @@ function createMovieCard(movie) {
             <p class="card-text">Genre: ${movie.genre.join(", ")}</p>
             <p class="card-text">Rate: ${movie.rate}</p>
         </div>
-    </a>`;
+    </a>`
 }
 
 // Obtener el contenedor de las tarjetas de películas del DOM
 const container = document.querySelector(".containerCards");
-0
 // Añadir al HTML del contenedor la tarjeta de película generada por createMovieCard(movie)
 tempData.forEach(movie => {
     container.innerHTML += createMovieCard(movie);
 });
+// ***************************
+function createMovieCard2(movie){
+    return `
+    <a class="card"href="#">
+    <img src="${movie.poster}" alt="${movie.title}">
+    </a>
+    `;
+}
 
+// Índices de las películas recomendadas
+const recommendedMovieIndexes = [7,2,4];
+
+// Filtrar las películas recomendadas
+const recommendedMovies = tempData.filter((movie, index) => recommendedMovieIndexes.includes(index));
+
+const container2 = document.querySelector(".containerFavoriteFilms");
+recommendedMovies.forEach(movie => {
+    container2.innerHTML += createMovieCard2(movie);
+});
