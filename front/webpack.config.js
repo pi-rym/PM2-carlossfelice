@@ -1,5 +1,5 @@
 module.exports = {
-    // mode:'development',
+    mode:'development',
   entry: "./scripts/index2.js",
 
   output: {
