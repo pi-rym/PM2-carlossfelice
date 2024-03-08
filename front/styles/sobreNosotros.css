@@ -1,0 +1,85 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+ul,
+ol {
+    list-style: none;
+    /* Eliminar viñetas de listas */
+}
+
+a {
+    text-decoration: none;
+    /* Eliminar subrayado de enlaces */
+    color: inherit;
+    /* Heredar color del texto */
+}
+
+button,
+input {
+    border: none;
+    /* Eliminar bordes predeterminados */
+    outline: none;
+    /* Eliminar contorno al enfocar */
+}
+
+.navbar {
+    /* position: fixed !important; */
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #800000 !important;
+    /* Rojo oscuro */
+    padding: 10px 0 !important;
+    color: #ffffff !important;
+    /* Blanco */
+}
+
+.navbar-brand {
+    margin-right: auto;
+    /* Mueve el logo hacia la izquierda */
+}
+
+.navbar-nav .nav-link {
+    font-size: 25px;
+    /* Tamaño de la fuente */
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Cambiar el color de fondo del Navbar cuando está contraído */
+@media (max-width: 991.98px) {
+    .navbar.bg-dark {
+        background-color: #333;
+    }
+}
+
+
+.section-validation{
+    margin-top: 50px;
+    padding: 5px;
+    width: 500px;
+    align-items: center;
+}

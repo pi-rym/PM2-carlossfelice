@@ -1,8 +1,9 @@
 // console.log(tempData);
 
-
+// const movie = require('../scripts/tempData');
 
 //cards
+
 // Función que crea una tarjeta de película a partir de un objeto movie
 
 function createMovieCard(movie) {
@@ -25,7 +26,9 @@ const container = document.querySelector(".containerCards");
 tempData.forEach(movie => {
     container.innerHTML += createMovieCard(movie);
 });
-// ***************************
+
+
+// section recomendadas
 function createMovieCard2(movie){
     return `
     <a class="card"href="#">
