@@ -1,6 +1,6 @@
 // console.log(tempData);
 
-// const movie = require('../scripts/tempData');
+const movie = require('../scripts/tempData');
 
 //cards
 

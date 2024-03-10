@@ -79,27 +79,16 @@ input {
 
 /* Carousel */
 
-/* .carousel-control-prev,
-.carousel-control-next {
-    width: 30px; 
-    height: 30px; 
-    opacity: 0.5;
-}
-.carousel-control-prev,
-.carousel-control-next {
-    background-color: rgba(0, 0, 0, 0.5); 
-    border: none; 
+/* Estilos para el Carousel */
+
+.carousel-inner .carousel-item img {
+    height: 400px; /* Establece la altura deseada para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: brightness(50%); 
-} */
-.carousel-inner .carousel-item img {
-    height: 400px;
-    /* Establece la altura deseada para las imágenes */
-    object-fit: cover;
-    /* Ajusta la imagen para llenar el contenedor */
+    filter: brightness(50%);
 }
 
 /* 
@@ -121,7 +110,7 @@ section {
 }
 
 .containerFavoriteFilms {
-    background-image: url("https://i.pinimg.com/564x/ba/76/ab/ba76abc30e073bcd6fc3f4a9f82b5084.jpg");
+    background-image: url("../images/img2.jpg");
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -131,7 +120,7 @@ section {
 }
 
 .containerCards {
-    background-image: url("https://i.pinimg.com/564x/bf/a8/2f/bfa82f126d7265d4bf8502796f461605.jpg");
+    background-image: url("../images/img3.jpg");
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -208,14 +197,14 @@ section {
 /* Estilos para la sección de Promociones */
 .section-cards,
 .section-recomendadas {
-    background-image: url("https://i.pinimg.com/564x/62/55/27/625527dfaa887b8ad67dc38bad55fdf3.jpg");
+    background-image: url("../images/img1.jpg");
     padding: 30px 0;
     background-color: #333;
     border-radius: 10px;
 }
 
 .section-promociones {
-    background-image: url("https://i.pinimg.com/564x/62/55/27/625527dfaa887b8ad67dc38bad55fdf3.jpg");
+    background-image: url("../images/img1.jpg");
     padding: 30px 0;
     background-color: #333;
 }
