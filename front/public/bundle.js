@@ -15,7 +15,7 @@
   \***************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\r\n\r\nconst renderCards= __webpack_require__(/*! ./renderCards */ \"./scripts/renderCards.js\");\r\n\r\n$.get('https://students-api.2.us-1.fl0.io/movies', (data, status) => {\r\n    renderCards(data);\r\n});\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// section de Películas recomendadas\r\n// Render recommended movies\r\n$.get('https://students-api.2.us-1.fl0.io/movies', (data, status) => {\r\n    renderRecommendedMovies(data);\r\n});\r\nconst renderRecommendedMovies = (data) => {\r\n    const recommendedMovieIndexes = [0]; // Example recommended movie indexes\r\n    const recommendedMovies = data.filter((movie, index) => recommendedMovieIndexes.includes(index));\r\n\r\n    const containerFavoriteFilms = document.getElementById('containerFavoriteFilms');\r\n    recommendedMovies.forEach(movie => {\r\n        containerFavoriteFilms.innerHTML += createMovieCard2(movie);\r\n    });\r\n}\r\n\r\n// Function to create HTML for a movie card\r\nconst createMovieCard2 = (movie) => {\r\n    return `\r\n        <div class=\"card\">\r\n            <img class=\"card-image\" src=\"${movie.poster}\" alt=\"${movie.title}\">\r\n            <h3 class=\"card-title\">${movie.title}</h3>\r\n            <p class=\"card-text\">${movie.year}</p>\r\n        </div>\r\n    `;\r\n}\n\n//# sourceURL=webpack://front/./scripts/index2.js?");
+eval("\r\n\r\n\r\nconst renderCards= __webpack_require__(/*! ./renderCards */ \"./scripts/renderCards.js\");\r\nconst renderRecommendedMovies=__webpack_require__(/*! ./renderRecomendedMovies */ \"./scripts/renderRecomendedMovies.js\")\r\n\r\n\r\n$.get('https://students-api.2.us-1.fl0.io/movies', (data, status) => {\r\n    renderCards(data)\r\n    renderRecommendedMovies(data)\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index2.js?");
 
 /***/ }),
 
@@ -26,6 +26,16 @@ eval("\r\n\r\nconst renderCards= __webpack_require__(/*! ./renderCards */ \"./sc
 /***/ ((module) => {
 
 eval("const moviesContainer = document.getElementById(\"containerCards\");\r\n\r\nconst renderCards = (data) => {\r\n  data.forEach((movie) => {\r\n    const card = document.createElement(\"div\");\r\n    card.classList.add(\"card\");\r\n\r\n    const title = document.createElement(\"h3\");\r\n    title.classList.add(\"card-title\");\r\n    title.innerHTML = movie.title;\r\n    const poster = document.createElement(\"img\");\r\n    poster.classList.add(\"card-image\");\r\n    poster.src = movie.poster;\r\n\r\n    const year = document.createElement(\"p\");\r\n    year.classList.add(\"card-text\");\r\n    year.innerHTML = movie.year;\r\n\r\n    card.appendChild(poster);\r\n    card.appendChild(title);\r\n    card.appendChild(year);\r\n    containerCards.appendChild(card);\r\n  });\r\n};\r\nmodule.exports=renderCards;\r\n\n\n//# sourceURL=webpack://front/./scripts/renderCards.js?");
+
+/***/ }),
+
+/***/ "./scripts/renderRecomendedMovies.js":
+/*!*******************************************!*\
+  !*** ./scripts/renderRecomendedMovies.js ***!
+  \*******************************************/
+/***/ ((module) => {
+
+eval("\r\nconst renderRecommendedMovies = (data) => {\r\n    const recommendedMovieIndexes = [0]; // Example recommended movie indexes\r\n    const recommendedMovies = data.filter((movie, index) => recommendedMovieIndexes.includes(index));\r\n\r\n    const containerFavoriteFilms = document.getElementById('containerFavoriteFilms');\r\n    recommendedMovies.forEach(movie => {\r\n        containerFavoriteFilms.innerHTML += createMovieCard2(movie);\r\n    });\r\n}\r\n\r\n// Function to create HTML for a movie card\r\nconst createMovieCard2 = (movie) => {\r\n    return `\r\n        <div class=\"card\">\r\n            <img class=\"card-image\" src=\"${movie.poster}\" alt=\"${movie.title}\">\r\n            <h3 class=\"card-title\">${movie.title}</h3>\r\n            <p class=\"card-text\">${movie.year}</p>\r\n        </div>\r\n    `;\r\n}\r\nmodule.exports=renderRecommendedMovies;\n\n//# sourceURL=webpack://front/./scripts/renderRecomendedMovies.js?");
 
 /***/ })
 
