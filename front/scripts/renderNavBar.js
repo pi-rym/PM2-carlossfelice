@@ -1,7 +1,10 @@
-const promociones = require("./renderPromociones");
+function navbar(links) {
+  if (!Array.isArray(links)) {
+    console.error("La variable 'links' debe ser un array.");
+    return "";
+  }
 
-const navbar=()=>{
-    return`
+  return `
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand me-auto" href="#">CinemaMaster</a>
@@ -16,17 +19,23 @@ const navbar=()=>{
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            <a class="nav-link" href="./pages/peliculas.html">Peliculas</a>
-            <a class="nav-link" href="./pages/series.html">Series</a>
-            <a class="nav-link" href="./pages/generos.html">Generos</a>
-            <a class="nav-link" href="./pages/sobreNosotros.html">SobreNosotros</a>
+            ${links.map(link => `<a class="nav-link" href="${link.url}">${link.text}</a>`).join('')}
           </div>
         </div>
       </div>
     </nav>
-    `
+  `;
 }
-const sectionNavbar=document.querySelector(".section-navBar");
-sectionNavbar.innerHTML=navbar()
-module.exports=navbar;
+
+const links = [
+  { url: "../index.html", text: "Inicio" },
+  { url: "../pages/peliculas.html", text: "Peliculas" },
+  { url: "../pages/series.html", text: "Series" },
+  { url: "../pages/generos.html", text: "Generos" },
+  { url: "../pages/sobreNosotros.html", text: "SobreNosotros" }
+];
+
+const sectionNavbar = document.querySelector(".section-navBar");
+sectionNavbar.innerHTML = navbar(links);
+
+module.exports = navbar;

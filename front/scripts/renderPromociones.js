@@ -1,4 +1,4 @@
-const promociones=()=>{
+function promociones(){
     return `
     
     

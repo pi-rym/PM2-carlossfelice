@@ -11,7 +11,7 @@ const renderRecommendedMovies = (data) => {
 }
 
 // Function to create HTML for a movie card
-const createMovieCard2 = (movie) => {
+function createMovieCard2 (movie){
     return `
         <div class="card">
             <img class="card-image" src="${movie.poster}" alt="${movie.title}">

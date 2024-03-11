@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CinemaMaster</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <!-- link-boostrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CinemaMaster</title>
-  <link rel="stylesheet" href="./styles/index.css" />
-  <!-- link-boostrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- enlace de jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
 
-  <!-- enlace de jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <body>
+    <header>
+      <!-- sectionNavBar -->
+      <section class="section-navBar"></section>
+    </header>
 
+    <!-- sectionCarousel -->
+    <section class="section-carousel"></section>
 
-</head>
-
-<body>
-  <header>
-    <section class="section-navBar">
-
+    <!-- Section recomendadas -->
+    <section class="section-recomendadas">
+      <div class="container">
+        <h2 class="section-title">Lo Mejor de la Semana</h2>
+        <div id="containerFavoriteFilms" class="containerFavoriteFilms"></div>
+      </div>
     </section>
 
-  </header>
-  <!-- sectionCarousel -->
-  <section class="section-carousel">
-  </section>
-
-  <!-- Section recomendadas -->
-  <section class="section-recomendadas">
-    <div class="container">
-      <h2 class="section-title">Lo Mejor de la Semana</h2>
-      <div id="containerFavoriteFilms" class="containerFavoriteFilms">
+    <!-- Section containerCards -->
+    <section class="section-cards">
+      <div class="container">
+        <h2 class="section-title">Lo Nuevo en Cartelera</h2>
+        <div id="containerCards" class="containerCards"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- Section containerCards -->
-  <section class="section-cards">
-    <div class="container">
-      <h2 class="section-title">Lo Nuevo en Cartelera</h2>
-    <div id="containerCards" class="containerCards">
+    <!-- sectionPromociones -->
+    <section id="promociones" class="section-promociones"></section>
 
-    </div>
-    </div>
-  </section>
+    <footer class="footer me-auto py-3 bg-dark">
+      <div class="container">
+        <span class="text-muted"
+          >© 2022 CinemaMaster. Todos los derechos reservados.</span
+        >
+      </div>
+    </footer>
 
-  <!-- sectionPromociones -->
-  <section id="promociones" class="section-promociones">
+    <!-- link de bundle -->
+    <script src="./public/bundle.js"></script>
 
-  </section>
-
-  <footer class="footer me-auto py-3 bg-dark">
-    <div class="container">
-      <span class="text-muted">© 2022 CinemaMaster. Todos los derechos reservados.</span>
-    </div>
-  </footer>
-
-<!-- link de bundle -->
-<script src="./public/bundle.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-    crossorigin="anonymous"></script>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- npm run build  -->
     <!-- npm start -->
-</body>
-
+  </body>
 </html>

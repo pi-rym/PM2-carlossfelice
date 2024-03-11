@@ -52,7 +52,7 @@ input {
 }
 
 .navbar-nav .nav-link {
-    font-size: 25px;
+    font-size: 17px;
     /* Tamaño de la fuente */
 }
 
@@ -93,8 +93,7 @@ input {
 
 /* 
 section {
-    margin-bottom: 10px;
-    background-color: #333;
+
 } */
 /*cards*/
 .carousel-control-prev-icon,

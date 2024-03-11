@@ -4,7 +4,7 @@ movie:{title,year,director,duration,genre,rate,poster,description}
 */
 const moviesContainer = document.getElementById("containerCards");
 
-const renderCards = (data) => {
+function renderCards (data){
   data.forEach((movie) => {
     //div card
     const card = document.createElement("div");
@@ -31,8 +31,5 @@ const renderCards = (data) => {
     containerCards.appendChild(card);
   });
 };
-
-
-
 
 module.exports = renderCards;

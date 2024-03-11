@@ -1,5 +1,5 @@
-const carousel = () => {
-    return `
+function carousel() {
+  return `
     <div class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
