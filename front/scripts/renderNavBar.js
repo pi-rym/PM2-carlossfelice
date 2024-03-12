@@ -1,3 +1,5 @@
+
+
 function navbar(links) {
   if (!Array.isArray(links)) {
     console.error("La variable 'links' debe ser un array.");

@@ -1,5 +1,5 @@
-function promociones(){
-    return `
+function promociones() {
+  return `
     
     
 <div class="container">
@@ -35,8 +35,8 @@ function promociones(){
 
 </div>
 </div>
-    `
+    `;
 }
 const sectionPromociones = document.querySelector(".section-promociones");
-sectionPromociones.innerHTML=promociones()
-module.exports=promociones;
+sectionPromociones.innerHTML = promociones();
+module.exports = promociones;
