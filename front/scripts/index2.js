@@ -38,30 +38,15 @@ const fetchMovies = async () => {
     const response = await axios.get(
       "https://students-api.up.railway.app/movies"
     );
-    return response.data; //devuelve los datos de las peliculas
+    const data = response.data; // Guardar los datos de las películas
+    renderCards(data); // Llamar a la función renderCards con los datos de las películas
   } catch (err) {
-    console.log("Error al obtener peliculas: ", err.message);
-    return null;
+    console.log("Error al obtener películas: ", err.message);
   }
 };
 
 //ruta cd front - cd scripts
-const newrenderCards= (movies) => {
-  if (!movies) {
-    console.error("No se encontraron las peliculas");
-    return;
-  }
-  console.log("Renderizando tarjetas de peliculas", movies);
-};
 
-(async () => {
-    try {
-      const movies = await fetchMovies();
-      newrenderCards(movies);
-    } catch (err) {
-      console.error(
-        "Error al renderizar las terjetas de peliculas: ",
-        err.message
-      );
-    }
-  })();
+fetchMovies().then(data => {
+  renderCards(data);
+});
