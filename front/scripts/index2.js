@@ -36,8 +36,8 @@ const renderCards = require("./renderCards");
 const fetchMovies = async () => {
   try {
     const response = await axios.get(
-      "https://students-api.up.railway.app/movies"
-      // "https://localhost:3001/movies"
+      // "https://students-api.up.railway.app/movies"
+      "http://localhost:3000/movies"
     );
     const data = response.data;
     return data;
