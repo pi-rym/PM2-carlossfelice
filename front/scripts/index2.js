@@ -1,6 +1,6 @@
 // //creo cards y cardsRecomended
 // const renderCards = require("./renderCards");
-// const renderRecommendedMovies = require("./renderRecomendedMovies");
+const renderRecommendedMovies = require("./renderRecomendedMovies");
 
 //********************** */
 const navBar = require("./renderNavBar");
@@ -49,6 +49,7 @@ const fetchMovies = async () => {
 
 fetchMovies().then((data) => {
   renderCards(data);
+  renderRecommendedMovies(data,[5,4,6])
 });
 
 //ruta cd front

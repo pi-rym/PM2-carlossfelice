@@ -1,7 +1,4 @@
-
-const renderRecommendedMovies = (data) => {
-    const recommendedMovieIndexes = [5,4,6]; 
-    // const recommendedMovieIndexes = [0]; 
+const renderRecommendedMovies = (data, recommendedMovieIndexes) => {
     const recommendedMovies = data.filter((movie, index) => recommendedMovieIndexes.includes(index));
 
     const containerFavoriteFilms = document.getElementById('containerFavoriteFilms');
@@ -20,4 +17,5 @@ function createMovieCard2 (movie){
         </div>
     `;
 }
-module.exports=renderRecommendedMovies;
+
+module.exports = renderRecommendedMovies;
