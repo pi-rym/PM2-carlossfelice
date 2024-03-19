@@ -1,15 +1,27 @@
+const express = require("express");
+const router = require("../routes/index");
+const morgan = require("morgan");
+const cors = require("cors");
 
-const express =require ("express");
-const morgan=require("morgan");
-const router=require("../routes/");
-const cors=require("cors")
+const server = express();
 
+server.use(morgan("dev"));
+server.use(cors());
+server.use(express.json());
 
-const app = express();
+server.use((req, res, next) => {
+  console.log("mi primer Middleware");
+  next();
+});
 
-app.use(morgan("dev"));
-app.use(cors())
-app.use(express.json())
-app.use(router);
+const miMiddleware = (req, res, next) => {
+  console.log(
+    `He recibido una request del tipo ${req.method} a la ruta ${req.url}`
+  );
+  next();
+};
 
-module.exports = app;
+server.use(miMiddleware);
+server.use(router);
+
+module.exports = server;
