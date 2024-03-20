@@ -1,6 +1,6 @@
 module.exports = {
     mode:'development',
-  entry: "./scripts/index2.js",
+  entry: "./scripts/index.js",
 
   output: {
     path: __dirname + "/public",

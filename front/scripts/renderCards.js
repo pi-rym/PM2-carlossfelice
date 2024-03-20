@@ -7,6 +7,7 @@ function renderCards(data) {
   const moviesContainer = document.getElementById("containerCards");
 
   data.forEach((movie) => {
+    console.log(movie)
     // div card
     const card = document.createElement("div");
     card.classList.add("card"); // Agrega la clase "card"
