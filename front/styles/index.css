@@ -76,7 +76,43 @@ input {
         background-color: #333;
     }
 }
-
+/*cards*/
+.card {
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    max-height: 400px; /* Altura máxima de la tarjeta */
+    transition: max-height 0.3s, color 0.3s, transform 0.3s; /* Agrega transiciones para altura, color y transform */
+    position: relative; /* Posición relativa para alinear el póster */
+  }
+  
+  .card:hover .card-text {
+    color: #333; /* Cambia el color al pasar el cursor sobre la tarjeta */
+  }
+  
+  .card:hover {
+    max-height: 100%; /* Altura máxima al hacer hover */
+    transform: translateY(-10px); /* Desplaza la tarjeta hacia arriba al hacer hover */
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 400px; /* Altura mayor para el póster */
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    position: relative; /* Posición relativa para fijar el póster */
+    z-index: 1; /* Coloca el póster por encima del contenido de la tarjeta */
+  }
+  
+  .card-body {
+    position: relative; /* Posición relativa para colocar el contenido de la tarjeta por encima del póster */
+    z-index: 2; /* Coloca el contenido de la tarjeta por encima del póster */
+    color: white; /* Color blanco para el texto */
+  }
+  
+  .card-title {
+    font-size: 1.5rem; /* Tamaño de letra más grande */
+    color: #333; /* Color del título */
+    margin-bottom: 10px; /* Espacio inferior */
+  }
 /* Carousel */
 
 /* Estilos para el Carousel */
@@ -137,7 +173,8 @@ section {
     border-radius: 10px;
 
 }
-
+/************/
+/* CARDS FILMS */
 .card {
     background-color: #ffffff;
     /* Blanco */
@@ -148,6 +185,21 @@ section {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s; /* Agrega transiciones para los colores al pasar el mouse */
+}
+
+.card:hover {
+    background-color: #333333;
+    /* Gris oscuro */
+    color: #ffffff;
+    /* Blanco */
+}
+
+.card:not(:hover) {
+    background-color: #ffffff;
+    /* Blanco */
+    color: #333333;
+    /* Gris oscuro */
 }
 
 .card-img-top {
@@ -158,7 +210,6 @@ section {
 }
 
 .card-body {
-
     padding: 15px;
 }
 
@@ -169,19 +220,18 @@ section {
 .card-title {
     font-size: 1.25rem;
     margin-bottom: 10px;
-
 }
 
 .card-text {
-    color: black;
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
-
 .btnCard:hover {
     background-color: black;
 }
+
+/*****************/
 
 .hr {
     border: none;
@@ -257,7 +307,7 @@ section {
 }
 
 footer.footer {
-    position: fixed;
+    position: fixed; /* Posición fija para el footer */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -265,4 +315,5 @@ footer.footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-}
+    z-index: 999; /* Z-index alto para que esté por encima de otros elementos */
+  }
