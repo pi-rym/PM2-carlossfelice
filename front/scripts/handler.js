@@ -18,4 +18,6 @@ const fetchMovies = async () => {
 module.exports=fetchMovies;
 //ruta cd front
 //npm run build
-//npm start
+//agrege el --watch
+
+//solo aplicar el y hace build e inicia{ npm start }

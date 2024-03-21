@@ -22,4 +22,4 @@ function carousel() {
 const sectionCarousel = document.querySelector(".section-carousel");
 sectionCarousel.innerHTML = carousel();
 
-module.exports = carousel;
+

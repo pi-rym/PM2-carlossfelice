@@ -24,4 +24,9 @@ const miMiddleware = (req, res, next) => {
 server.use(miMiddleware);
 server.use(router);
 
+server.use((err, req, res, next) => {
+  res.status(err.statusCode || 500).json({ message: err.message });
+  next();
+});
+
 module.exports = server;

@@ -1,30 +1,44 @@
-const Movie=require("../models/Movie");
+const Movie = require("../db/models/Movie");
 
 const getMoviesService = async () => {
   try {
-    const movies = await Movie.find();
+    const movies = await Movie.find()
     return movies;
   } catch (error) {
-    throw new Error("Error al obtener las películas");
+    throw new Error("Error al obtener las películas", error);
   }
 };
-const postMovieService = async ({ title, year, director, duration, genre, rate, poster }) => {
+
+const getMovieByIdService = async (id) => {
   try {
-    const newMovie = await Movie.create({
-      title,
-      year,
-      director,
-      duration,
-      genre,
-      rate,
-      poster
-    });
+    const movie = await Movie.findById(id);
+    return movie;
+  } catch (error) {
+    throw new Error("Error al obtener la película por ID", error);
+  }
+};
+
+const getMovieByTitleService = async (title) => {
+  try {
+    const movie = await Movie.findOne({ title });
+    return movie;
+  } catch (error) {
+    throw new Error("Error al obtener la película por título", error);
+  }
+};
+
+const postMovieService = async (movie) => {
+  try {
+    const newMovie = await Movie.create(movie);
     return newMovie;
   } catch (error) {
-    throw new Error("Error al crear la película");
+    throw new Error("Error al crear la película", error);
   }
 };
-module.exports={
+
+module.exports = {
   getMoviesService,
+  getMovieByIdService,
+  getMovieByTitleService,
   postMovieService
-}
+};

@@ -19,66 +19,6 @@ eval("\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/
 
 /***/ }),
 
-/***/ "./scripts/index.js":
-/*!**************************!*\
-  !*** ./scripts/index.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const fetchMovies=__webpack_require__(/*! ./handler */ \"./scripts/handler.js\")\r\nconst renderRecommendedMovies = __webpack_require__(/*! ./renderRecomendedMovies */ \"./scripts/renderRecomendedMovies.js\");\r\nconst renderCards = __webpack_require__(/*! ./renderCards */ \"./scripts/renderCards.js\");\r\nconst navBar = __webpack_require__(/*! ./renderNavBar */ \"./scripts/renderNavBar.js\");\r\nconst carousel = __webpack_require__(/*! ./renderCarousel */ \"./scripts/renderCarousel.js\");\r\nconst promo = __webpack_require__(/*! ./renderPromociones */ \"./scripts/renderPromociones.js\");\r\n\r\nnavBar();\r\ncarousel();\r\npromo();\r\n\r\nfetchMovies().then((data) => {\r\n    renderCards(data);\r\n    renderRecommendedMovies(data,[0,1,2])\r\n  });\r\n\r\n\r\n//ruta cd front\r\n//npm run build\r\n//npm start\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
-
-/***/ }),
-
-/***/ "./scripts/renderCards.js":
-/*!********************************!*\
-  !*** ./scripts/renderCards.js ***!
-  \********************************/
-/***/ ((module) => {
-
-eval("/*\r\nmovie:{title,year,director,duration,genre,rate,poster,description}\r\n*/\r\n\r\nfunction renderCards(data) {\r\n\r\n  const moviesContainer = document.getElementById(\"containerCards\");\r\n\r\n  data.forEach((movie) => {\r\n    // div card\r\n    const card = document.createElement(\"div\");\r\n    card.classList.add(\"card\"); // Agrega la clase \"card\"\r\n\r\n    // div card-body\r\n    const cardBody = document.createElement(\"div\");\r\n    cardBody.classList.add(\"card-body\");\r\n\r\n    // card-image\r\n    const poster = document.createElement(\"img\");\r\n    poster.classList.add(\"card-image\");\r\n    poster.src = movie.poster;\r\n\r\n    // card-title\r\n    const title = document.createElement(\"h3\");\r\n    title.classList.add(\"card-title\");\r\n    title.innerHTML = movie.title;\r\n\r\n    // card-text\r\n    const year = document.createElement(\"p\");\r\n    year.classList.add(\"card-text\");\r\n    year.innerHTML = `<strong>Año:</strong> ${movie.year}`;\r\n\r\n    const director = document.createElement(\"p\");\r\n    director.classList.add(\"card-text\");\r\n    director.innerHTML = `<strong>Director:</strong> ${movie.director}`;\r\n\r\n    const duration = document.createElement(\"p\");\r\n    duration.classList.add(\"card-text\");\r\n    duration.innerHTML = `<strong>Duración:</strong> ${movie.duration}`;\r\n\r\n    const genre = document.createElement(\"p\");\r\n    genre.classList.add(\"card-text\");\r\n    genre.innerHTML = `<strong>Género:</strong> ${movie.genre}`;\r\n\r\n    const rate = document.createElement(\"p\");\r\n    rate.classList.add(\"card-text\");\r\n    rate.innerHTML = `<strong>Rate:</strong> ${movie.rate}`;\r\n\r\n    const description = document.createElement(\"p\");\r\n    description.classList.add(\"card-text\");\r\n    description.innerHTML = `<strong>Descripción:</strong> ${movie.description}`;\r\n\r\n    card.appendChild(poster);\r\n    card.appendChild(title);\r\n    card.appendChild(year);\r\n    card.appendChild(director);\r\n    card.appendChild(duration);\r\n    card.appendChild(genre);\r\n    card.appendChild(rate);\r\n    card.appendChild(description);\r\n\r\n    moviesContainer.appendChild(card);\r\n  });\r\n}\r\n\r\nmodule.exports = renderCards;\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/renderCards.js?");
-
-/***/ }),
-
-/***/ "./scripts/renderCarousel.js":
-/*!***********************************!*\
-  !*** ./scripts/renderCarousel.js ***!
-  \***********************************/
-/***/ ((module) => {
-
-eval("function carousel() {\r\n  return `\r\n    <div class=\"carousel slide\" data-bs-ride=\"carousel\">\r\n      <div class=\"carousel-inner\">\r\n        <div class=\"carousel-item active\">\r\n          <img src=\"https://i.pinimg.com/564x/66/04/d0/6604d0f9002ad6245c5762ce5f5db3c6.jpg\" class=\"d-block w-100\"\r\n            alt=\"First slide\">\r\n        </div>\r\n        <div class=\"carousel-item\">\r\n          <img src=\"https://i.pinimg.com/564x/9a/06/66/9a066699bfe730e67406cadaacbb98ef.jpg\" class=\"d-block w-100\"\r\n            alt=\"Second slide\">\r\n        </div>\r\n        <div class=\"carousel-item\">\r\n          <img src=\"https://i.pinimg.com/564x/71/01/db/7101dbf9870cc11cdacb2efbb0770b53.jpg\" class=\"d-block w-100\"\r\n            alt=\"Third slide\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    `;\r\n}\r\n\r\nconst sectionCarousel = document.querySelector(\".section-carousel\");\r\nsectionCarousel.innerHTML = carousel();\r\n\r\nmodule.exports = carousel;\r\n\n\n//# sourceURL=webpack://front/./scripts/renderCarousel.js?");
-
-/***/ }),
-
-/***/ "./scripts/renderNavBar.js":
-/*!*********************************!*\
-  !*** ./scripts/renderNavBar.js ***!
-  \*********************************/
-/***/ ((module) => {
-
-eval("\r\n\r\nfunction navbar(links) {\r\n  if (!Array.isArray(links)) {\r\n    console.error(\"La variable 'links' debe ser un array.\");\r\n    return \"\";\r\n  }\r\n\r\n  return `\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n      <div class=\"container-fluid\">\r\n        <a class=\"navbar-brand me-auto\" href=\"#\">CinemaMaster</a>\r\n\r\n        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavAltMarkup\"\r\n          aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n          <span class=\"navbar-toggler-icon\">\r\n            <!-- Icon de hamburguesa de Font Awesome -->\r\n            <i class=\"fas fa-bars\"></i>\r\n          </span>\r\n        </button>\r\n\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\r\n          <div class=\"navbar-nav ml-auto\">\r\n            ${links.map(link => `<a class=\"nav-link\" href=\"${link.url}\">${link.text}</a>`).join('')}\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n  `;\r\n}\r\n\r\nconst links = [\r\n  { url: \"../index.html\", text: \"Inicio\" },\r\n  { url: \"../pages/peliculas.html\", text: \"Peliculas\" },\r\n  { url: \"../pages/series.html\", text: \"Series\" },\r\n  { url: \"../pages/generos.html\", text: \"Generos\" },\r\n  { url: \"../pages/sobreNosotros.html\", text: \"SobreNosotros\" }\r\n];\r\n\r\nconst sectionNavbar = document.querySelector(\".section-navBar\");\r\nsectionNavbar.innerHTML = navbar(links);\r\n\r\nmodule.exports = navbar;\r\n\n\n//# sourceURL=webpack://front/./scripts/renderNavBar.js?");
-
-/***/ }),
-
-/***/ "./scripts/renderPromociones.js":
-/*!**************************************!*\
-  !*** ./scripts/renderPromociones.js ***!
-  \**************************************/
-/***/ ((module) => {
-
-eval("function promociones() {\r\n  return `\r\n    \r\n    \r\n<div class=\"container\">\r\n<h2 class=\"section-title\">¡Aprovecha nuestras promociones!</h2>\r\n<div class=\"promociones-grid\">\r\n  <div class=\"promocion\">\r\n    <img src=\"https://i.pinimg.com/564x/9f/05/2a/9f052aeaaae3e0a2c07425d99a5cc9ef.jpg\" alt=\"Promoción 1\"\r\n      class=\"promocion-img\">\r\n    <h3 class=\"promocion-title\">Descuento en Combo de Palomitas y Refresco</h3>\r\n    <p class=\"promocion-description\">Compra un combo de palomitas y refresco y obtén un 20% de descuento.</p>\r\n  </div>\r\n  <div class=\"promocion\">\r\n    <img src=\"https://i.pinimg.com/564x/92/70/11/92701158468cddca162421f1588fda72.jpg\" alt=\"Promoción 2\"\r\n      class=\"promocion-img\">\r\n    <h3 class=\"promocion-title\">2x1 en Entradas los Martes</h3>\r\n    <p class=\"promocion-description\">Ven los martes y disfruta de nuestras películas con la promoción 2x1 en\r\n      entradas.</p>\r\n  </div>\r\n  <div class=\"promocion\">\r\n    <img src=\"https://i.pinimg.com/564x/42/db/77/42db77ca69c021e1af07caac9f159b2a.jpg\" alt=\"Promoción 3\"\r\n      class=\"promocion-img\">\r\n    <h3 class=\"promocion-title\">Estreno Exclusivo con Descuento</h3>\r\n    <p class=\"promocion-description\">Obtén un descuento especial en el estreno exclusivo de la semana presentando\r\n      tu boleto de cine.</p>\r\n  </div>\r\n\r\n  <div class=\"promocion\">\r\n    <img src=\"https://i.pinimg.com/564x/f5/e3/91/f5e3914ed16efc0595f21621c6c2f98a.jpg\" alt=\"Promoción 4\" class=\"promocion-img\">\r\n    <h3 class=\"promocion-title\">Descuento en Combo Familiar</h3>\r\n    <p class=\"promocion-description\">Disfruta de un 20% de descuento en nuestro combo familiar que incluye\r\n      palomitas, bebidas y snacks para toda la familia.</p>\r\n  </div>\r\n\r\n</div>\r\n</div>\r\n    `;\r\n}\r\nconst sectionPromociones = document.querySelector(\".section-promociones\");\r\nsectionPromociones.innerHTML = promociones();\r\nmodule.exports = promociones;\r\n\n\n//# sourceURL=webpack://front/./scripts/renderPromociones.js?");
-
-/***/ }),
-
-/***/ "./scripts/renderRecomendedMovies.js":
-/*!*******************************************!*\
-  !*** ./scripts/renderRecomendedMovies.js ***!
-  \*******************************************/
-/***/ ((module) => {
-
-eval("const renderRecommendedMovies = (data, recommendedMovieIndexes) => {\r\n    const recommendedMovies = data.filter((movie, index) => recommendedMovieIndexes.includes(index));\r\n\r\n    const containerFavoriteFilms = document.getElementById('containerFavoriteFilms');\r\n    recommendedMovies.forEach(movie => {\r\n        containerFavoriteFilms.innerHTML += createMovieCard2(movie);\r\n    });\r\n}\r\n\r\n// Function to create HTML for a movie card\r\nfunction createMovieCard2 (movie){\r\n    return `\r\n        <div class=\"card\">\r\n            <img class=\"card-image\" src=\"${movie.poster}\" alt=\"${movie.title}\">\r\n            <h3 class=\"card-title\">${movie.title}</h3>\r\n            <p class=\"card-text\">${movie.year}</p>\r\n        </div>\r\n    `;\r\n}\r\n\r\nmodule.exports = renderRecommendedMovies;\r\n\n\n//# sourceURL=webpack://front/./scripts/renderRecomendedMovies.js?");
-
-/***/ }),
-
 /***/ "./node_modules/axios/dist/browser/axios.cjs":
 /*!***************************************************!*\
   !*** ./node_modules/axios/dist/browser/axios.cjs ***!
@@ -133,8 +73,8 @@ eval("// Axios v1.6.7 Copyright (c) 2024 Matt Zabriskie and contributors\n\n\nfu
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/index.js");
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/handler.js");
 /******/ 	
 /******/ })()
 ;

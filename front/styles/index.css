@@ -175,31 +175,17 @@ section {
 }
 /************/
 /* CARDS FILMS */
+/*cards*/
+/* Cards de películas */
+/*cards*/
 .card {
-    background-color: #ffffff;
-    /* Blanco */
-    color: #333333;
-    /* Gris oscuro */
+    background-color: #333; /* Blanco */
+    color: #fff;
     width: 18rem;
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s; /* Agrega transiciones para los colores al pasar el mouse */
-}
-
-.card:hover {
-    background-color: #333333;
-    /* Gris oscuro */
-    color: #ffffff;
-    /* Blanco */
-}
-
-.card:not(:hover) {
-    background-color: #ffffff;
-    /* Blanco */
-    color: #333333;
-    /* Gris oscuro */
 }
 
 .card-img-top {
@@ -207,10 +193,10 @@ section {
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-bottom: 10px;
 }
 
 .card-body {
+    color: white;
     padding: 15px;
 }
 
@@ -220,18 +206,21 @@ section {
 
 .card-title {
     font-size: 1.25rem;
+    color: #333; 
     margin-bottom: 10px;
+
 }
 
 .card-text {
+    color: white;
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
+
 .btnCard:hover {
     background-color: black;
 }
-
 /*****************/
 
 .hr {
@@ -307,6 +296,65 @@ section {
     font-size: 0.9rem;
 }
 
+.section-form {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000; /* Cambiado a color negro */
+  }
+  
+  /* Estilo específico para el campo de URL del póster */
+  input[type="url"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #fff;
+    color:black; /* Cambiado a color blanco */
+  }
+  
+  button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
 footer.footer {
     position: fixed; /* Posición fija para el footer */
     left: 0;

@@ -1,5 +1,5 @@
 const server = require("./src/services/server");
-const connectionDb = require("./src/config/connectionDb");
+const connectionDb = require("./src/db/config/connectionDb");
 
 connectionDb()
   .then((res) => {

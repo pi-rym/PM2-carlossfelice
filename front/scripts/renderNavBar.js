@@ -40,4 +40,4 @@ const links = [
 const sectionNavbar = document.querySelector(".section-navBar");
 sectionNavbar.innerHTML = navbar(links);
 
-module.exports = navbar;
+

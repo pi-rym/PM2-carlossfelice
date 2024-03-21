@@ -24,7 +24,7 @@ class CarritoCompra {
   }
 
   aplicarDescuento(porcentaje) {
-    let total=this.calcularTotal()
+    let total = this.calcularTotal();
     let descuento = (total * porcentaje) / 100;
     let totalconDescuento = total - descuento;
     return totalconDescuento;
