@@ -11,9 +11,9 @@ const {
 } = require("../services/moviesService");
 
 moviesRouter.get("/", getMoviesController);
-moviesRouter.get("/:id", validateMovieId, getMovieByIdService);
+// moviesRouter.get("/:id", validateMovieId, getMovieByIdService);
 moviesRouter.get("/:title", getMovieByTitleService);
 
-moviesRouter.post("/", validateMovie, postMovieController);
+moviesRouter.post("/", postMovieController);
 
 module.exports = moviesRouter;

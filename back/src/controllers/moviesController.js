@@ -28,8 +28,15 @@ const getMovieByTitleController = async (req, res) => {
 };
 
 const postMovieController = async (req, res) => {
-  await postMovieService(req.body)
-  res.status(201).send({ message:"Pelicula creada exitosamente"})
+  try {
+    const movieData = req.body;
+    console.log("Datos recibidos:", movieData);
+    await postMovieService(movieData);
+    res.status(201).send({ message: "Película creada exitosamente" });
+  } catch (error) {
+    console.error("Error al procesar la solicitud:", error);
+    res.status(500).send({ message: "Error al procesar la solicitud" });
+  }
 };
 
 module.exports = {

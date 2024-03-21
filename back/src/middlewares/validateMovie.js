@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 /**get */
-const validateMovieId = (req, res, next) => {
-  const { id } = req.params;
-  if (mongoose.Types.ObjectId.isValid(id)) {
-    next();
-  } else {
-    next({ message: "Id no es valido", statusCode: 400 });
-  }
-};
+// const validateMovieId = (req, res, next) => {
+//   const { id } = req.params;
+//   if (mongoose.Types.ObjectId.isValid(id)) {
+//     next();
+//   } else {
+//     next({ message: "Id no es valido", statusCode: 400 });
+//   }
+// };
 
 /**post */
 const validateMovie = (req, res, next) => {
@@ -18,4 +18,4 @@ const validateMovie = (req, res, next) => {
   next();
 };
 
-module.exports = { validateMovieId, validateMovie };
+module.exports = {validateMovie };
