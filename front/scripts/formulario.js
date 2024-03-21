@@ -54,7 +54,9 @@ function validateCheckboxes() {
 validateCheckboxes();
 
 function postFormData(data) {
-  axios.post('/movies', data)
+  console.log(data);
+
+  axios.post('http://localhost:3000/movies', data)
     .then(() => {
       alert("Película enviada con éxito");
     })
@@ -92,7 +94,7 @@ function handlerSubmmit(event) {
     poster: poster.value.trim(),
     genres: Array.from(document.querySelectorAll('input[name="genre[]"]:checked')).map(input => input.value),
   };
-
+console.log(data);
   postFormData(data);
 }
 
